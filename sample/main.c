@@ -7,9 +7,22 @@
 #include "scene.h"
 #include <SFML/Graphics/Color.h>
 #include <SFML/Graphics/RenderWindow.h>
+#include <SFML/Graphics/Sprite.h>
+#include <SFML/Graphics/Texture.h>
 #include <SFML/Graphics/Types.h>
 #include <SFML/Window/VideoMode.h>
 #include <SFML/Window/WindowBase.h>
+#include <stdlib.h>
+
+void destroy_scene(scene_t *scene)
+{
+    if (!scene) {
+        return;
+    }
+    sfSprite_destroy(scene->background);
+    sfTexture_destroy(scene->texture);
+    free(scene);
+}
 
 int main(void)
 {
@@ -27,6 +40,9 @@ int main(void)
         scenes[current_scene]->render(scenes[current_scene], window);
         sfRenderWindow_display(window);
     }
+    destroy_scene(scenes[MENU]);
+    destroy_scene(scenes[GAME]);
+    destroy_scene(scenes[PAUSE]);
     sfRenderWindow_destroy(window);
     return 0;
 }
