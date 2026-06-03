@@ -16,7 +16,7 @@ make
 
 Exemples:
 
-Gameloop du wolf3D
+Wolf3D's gameloop
 ```c
 static int wolf(bst_context_t *context)
 {
@@ -33,7 +33,7 @@ static int wolf(bst_context_t *context)
 
 <br>
 
-Gameloop du my_world
+my_world's gameloop
 ```c
 int main(int argc, char *const *argv)
 {
@@ -56,7 +56,7 @@ int main(int argc, char *const *argv)
 ```
 <br>
 
-Gameloop du my_radar
+my_radar's gameloop
 ```c
 int main(int argc, char *const *argv)
 {
