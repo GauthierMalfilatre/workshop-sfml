@@ -5,14 +5,14 @@
 ** Main int.c
 */
 #include "../scene.h"
-#include <SFML/Config.h>
-#include <SFML/Graphics/RenderWindow.h>
-#include <SFML/Graphics/Types.h>
-#include <SFML/System/Vector2.h>
-#include <SFML/Window/Event.h>
-#include <SFML/Window/Keyboard.h>
-#include <SFML/Graphics/Texture.h>
-#include <SFML/Graphics/Sprite.h>
+#include <CSFML/Config.h>
+#include <CSFML/Graphics/RenderWindow.h>
+#include <CSFML/Graphics/Types.h>
+#include <CSFML/System/Vector2.h>
+#include <CSFML/Window/Event.h>
+#include <CSFML/Window/Keyboard.h>
+#include <CSFML/Graphics/Texture.h>
+#include <CSFML/Graphics/Sprite.h>
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -60,8 +60,7 @@ scene_t *create_menu_scene(void)
     }
     menu->id = MENU;
     menu->texture = sfTexture_createFromFile("assets/menu.jpg", NULL);
-    menu->background = sfSprite_create();
-    sfSprite_setTexture(menu->background, menu->texture, sfFalse);
+    menu->background = sfSprite_create(menu->texture);
     sfSprite_setPosition(menu->background, (sfVector2f){0, 0});
     menu->events = &menu_events;
     menu->update = &menu_update;

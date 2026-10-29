@@ -6,8 +6,8 @@
 */
 #ifndef SCENE_H
     #define SCENE_H
-    #include <SFML/Graphics/Types.h>
-    #include "SFML/Graphics/RenderWindow.h"
+    #include <CSFML/Graphics/Types.h>
+    #include "CSFML/Graphics/RenderWindow.h"
     #include <stddef.h>
 
 /**

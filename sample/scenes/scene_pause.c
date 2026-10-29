@@ -5,14 +5,14 @@
 ** Main int.c
 */
 #include "../scene.h"
-#include <SFML/Config.h>
-#include <SFML/Graphics/RenderWindow.h>
-#include <SFML/Graphics/Types.h>
-#include <SFML/System/Vector2.h>
-#include <SFML/Window/Event.h>
-#include <SFML/Window/Keyboard.h>
-#include <SFML/Graphics/Texture.h>
-#include <SFML/Graphics/Sprite.h>
+#include <CSFML/Config.h>
+#include <CSFML/Graphics/RenderWindow.h>
+#include <CSFML/Graphics/Types.h>
+#include <CSFML/System/Vector2.h>
+#include <CSFML/Window/Event.h>
+#include <CSFML/Window/Keyboard.h>
+#include <CSFML/Graphics/Texture.h>
+#include <CSFML/Graphics/Sprite.h>
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -62,8 +62,7 @@ scene_t *create_pause_scene(void)
     }
     pause->id = PAUSE;
     pause->texture = sfTexture_createFromFile("assets/pause.jpg", NULL);
-    pause->background = sfSprite_create();
-    sfSprite_setTexture(pause->background, pause->texture, sfFalse);
+    pause->background = sfSprite_create(pause->texture);
     sfSprite_setPosition(pause->background, (sfVector2f){0, 0});
     pause->events = &pause_events;
     pause->update = &pause_update;

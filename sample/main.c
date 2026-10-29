@@ -5,13 +5,13 @@
 ** Main int.c
 */
 #include "scene.h"
-#include <SFML/Graphics/Color.h>
-#include <SFML/Graphics/RenderWindow.h>
-#include <SFML/Graphics/Sprite.h>
-#include <SFML/Graphics/Texture.h>
-#include <SFML/Graphics/Types.h>
-#include <SFML/Window/VideoMode.h>
-#include <SFML/Window/WindowBase.h>
+#include <CSFML/Graphics/Color.h>
+#include <CSFML/Graphics/RenderWindow.h>
+#include <CSFML/Graphics/Sprite.h>
+#include <CSFML/Graphics/Texture.h>
+#include <CSFML/Graphics/Types.h>
+#include <CSFML/Window/VideoMode.h>
+#include <CSFML/Window/WindowBase.h>
 #include <stdlib.h>
 
 void destroy_scene(scene_t *scene)
@@ -28,7 +28,7 @@ int main(void)
 {
     scene_t *scenes[3] = {};
     scene_id_t current_scene = MENU;
-    sfRenderWindow *window = sfRenderWindow_create((sfVideoMode){800, 600, 32}, "FEUR", sfResize | sfClose, 0);
+    sfRenderWindow *window = sfRenderWindow_create((sfVideoMode){{800, 600}, 32}, "FEUR", sfResize | sfClose, sfWindowed , 0);
 
     scenes[MENU] = create_menu_scene();
     scenes[GAME] = create_game_scene();
